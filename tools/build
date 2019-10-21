@@ -28,7 +28,10 @@ status() {
     echo "$MAG$1$END"
 }
 
-cd $ROOT
-
 status "Rendering site"
-status "$DEST"
+
+for file in `find $SRC -name "*.md" -type f` 
+do 
+   x="${file##$SRC}" # Strip `src` path from file string
+   echo "$x"
+done
