@@ -1,0 +1,5 @@
+dist: trusty
+install:
+  - tools/install
+
+
