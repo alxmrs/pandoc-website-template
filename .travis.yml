@@ -1,0 +1,5 @@
+language: python
+cache: pip
+install:
+  pip install pandoc
+
