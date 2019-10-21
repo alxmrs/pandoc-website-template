@@ -5,7 +5,7 @@ DEST=${DEST:-"$ROOT/docs"}
 SRC=${SRC:-"$ROOT/src"}
 HEADER=${HEADER:-"$SRC/header.html"}
 FOOTER=${FOOTER:-"$SRC/footer.html"}
-PANOPTS=${PANOPTS:-"--highlight-style=breezedark --css $SRC/css/main.css \
+PANOPTS=${PANOPTS:-"--css $SRC/css/main.css \
 --email-obfuscation=javascript -f markdown -t html5 -B $HEADER -A $FOOTER"}
 
 
@@ -33,5 +33,8 @@ status "Rendering site"
 for file in `find $SRC -name "*.md" -type f` 
 do 
    x="${file##$SRC}" # Strip `src` path from file string
-   echo "$x"
+   y="${x%%md}html"
+   echo "$x --> $y"
+   mkdir $(dirname "$DEST$y")
+   pandoc $PANOPTS --output=$DEST$y $file || warn "failed to create $y"
 done
