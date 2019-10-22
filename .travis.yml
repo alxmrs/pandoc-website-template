@@ -3,6 +3,9 @@ git:
   depth: 1
 install:
   - tools/install
+cache: 
+  directories:
+    - /usr/bin/pandoc 
 script: 
   - tools/build
 deploy:
