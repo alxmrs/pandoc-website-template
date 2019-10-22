@@ -1,4 +1,6 @@
 dist: xenial
+git: 
+  depth: 1
 install:
   - tools/install
 script: 
