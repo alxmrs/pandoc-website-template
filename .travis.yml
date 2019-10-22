@@ -1,18 +1,19 @@
 dist: xenial
-git: 
+git:
   depth: 1
 install:
-  - tools/install
-cache: 
+- tools/install
+cache:
   directories:
-    - /usr/bin/pandoc 
-script: 
-  - tools/build
+  - "/usr/bin/pandoc"
+script:
+- tools/build
 deploy:
   provider: pages:git
-  token: $GITHUB_TOKEN
+  token: "$GITHUB_TOKEN"
   edge: true
   target_branch: master
   verbose: true
-
-
+env:
+  global:
+    secure: szXHyT3dGSe/ARGCGW5yIvY8ASxbCR3FkT+QauJKDFWQN1h1cu7aW8StbJVAxXKPSsJp1zo1vTapFU5skbJJuHTUkVruAbi676x9Smq0cWQAiAIunOgu2AOQEilQNCcVtVLlJA2bKJQ7GFhtASa/mATnj2wYCUAo7wbulr1cHrja2Vgp0axw1Z9wzF1ZSzWmIeHU8DK4703EvIwPRIgOei87ud7NIrc04na8g1wYdtDRcpMjASHSa+VyK4bLFn2iMUpA8YSjooHimo9p9Zl3HbsWDaEAn4Jio1YWkVm6wwxKGjKebiSPop6rPK7tpNTrwT+W1hHV/Tt8buNfdMX2phv3D+elFJp2htcyxw/SO4lH97t8kmNxi+53fLpsd+ORQNez4zRuuEsEaCT/h1b76j2ru+6MIR7+fW/6xr3p0POz6cslxAH3nv2EjHwJycYYFP+6ziuk+5CxJbcB48dQE+exCjcw7Qt4ZeLMLY/a7Loz+MI3sayVggpgHbIPi0OkdBNzBKsv78sRqRfQmuclqvctBZU+oTH6kMaseoc1OFW4PIWgSYc9NRm5V7KBhCDpHVfE0q0JNl7k0jP8J1WdG9zuFon9irCwv+lxtFChJiL8i6TdosQGSVMoEjA3S3U5OlBzg+rfnLQoE6LtoJ2B46RYCzM1Q5DEgETbuCRnCDc=
