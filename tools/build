@@ -28,13 +28,17 @@ status() {
     echo "$MAG$1$END"
 }
 
+soft_mkdir() {
+   [ -d $1 ] || mkdir $1 
+}
+
 status "Rendering site"
 
 for file in `find $SRC -name "*.md" -type f` 
 do 
-   x="${file##$SRC}" # Strip `src` path from file string
-   y="${x%%md}html"
-   echo "$x --> $y"
-   mkdir $(dirname "$DEST$y")
-   pandoc $PANOPTS --output=$DEST$y $file || warn "failed to create $y"
+   from="${file##$SRC}" # Strip `src` path from file string
+   to="${from%%md}html"
+   echo "$from --> $to"
+   soft_mkdir $(dirname "$DEST$to")
+   pandoc $PANOPTS --output=$DEST$to $file || warn "failed to create $to"
 done
