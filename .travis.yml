@@ -1,5 +1,18 @@
-dist: trusty
+dist: xenial
+git: 
+  depth: 1
 install:
   - tools/install
+cache: 
+  directories:
+    - /usr/bin/pandoc 
+script: 
+  - tools/build
+deploy:
+  provider: pages:git
+  token: GITHUB_TOKEN
+  edge: true
+  target_branch: master
+  verbose: true
 
 

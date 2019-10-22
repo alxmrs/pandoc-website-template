@@ -1,3 +1,4 @@
 #!/bin/sh
-apt install pandoc -y
+sudo apt-get update
+sudo apt-get install -y pandoc 
 
