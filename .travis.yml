@@ -10,7 +10,7 @@ script:
   - tools/build
 deploy:
   provider: pages:git
-  token: GITHUB_TOKEN
+  token: $GITHUB_TOKEN
   edge: true
   target_branch: master
   verbose: true
