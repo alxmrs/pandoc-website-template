@@ -7,7 +7,7 @@ script:
 - tools/build
 deploy:
   provider: pages
-  token: $GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   keep_history: true
   skip_cleanup: true
   verbose: true
