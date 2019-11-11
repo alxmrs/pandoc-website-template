@@ -51,5 +51,5 @@ do
     to="$DEST${file##$SRC}"
     echo "${from##$ROOT} --> ${to##$ROOT}"
     mkdir -p $(dirname $to)
-    cp $from $to
+    cp $from $to || warm "Failed to copy asset $to"
 done
