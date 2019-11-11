@@ -8,8 +8,7 @@ FOOTER=${FOOTER:-"$SRC/footer.html"}
 CSS=${CSS:-"css/main.css"}
 SRCEXT=${SRCEXT:-"md"}
 DSTEXT=${DSTEXT:-"html"}
-
-PANOPTS=${PANOPTS:-"--css $CSS --email-obfuscation=javascript -f gfm -t html5 -B $HEADER -A $FOOTER"}
+PANOPTS=${PANOPTS:-"--css $CSS --email-obfuscation=javascript --metadata-file=defaults.yml -f gfm -t html5 -B $HEADER -A $FOOTER"}
 
 
 RED="\033[91m"
