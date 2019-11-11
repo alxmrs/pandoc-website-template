@@ -6,6 +6,9 @@ SRC=${SRC:-"$ROOT/src"}
 HEADER=${HEADER:-"$SRC/header.html"}
 FOOTER=${FOOTER:-"$SRC/footer.html"}
 CSS=${CSS:-"css/main.css"}
+SRCEXT=${SRCEXT:-"md"}
+DSTEXT=${DSTEXT:-"html"}
+
 PANOPTS=${PANOPTS:-"--css $CSS --email-obfuscation=javascript -f gfm -t html5 -B $HEADER -A $FOOTER"}
 
 
@@ -31,12 +34,12 @@ status() {
 mkdir -p $DEST
 
 
-status "Rendering site"
+status "Rendering"
 
-for file in `find $SRC -name "*.md" -type f` 
+for file in `find $SRC -name "*.$SRCEXT" -type f` 
 do 
    from="${file##$SRC}" # Strip `src` path from file string
-   to="${from%%md}html"
+   to="${from%%$SRCEXT}$DSTEXT"
    echo "$from --> $to"
    mkdir -p $(dirname "$DEST$to")
    pandoc $PANOPTS --output=$DEST$to $file || warn "failed to create $to"
@@ -45,7 +48,7 @@ done
 
 status "Copying over assets"
 
-for file in `find $SRC ! -name "*.md" -type f`
+for file in `find $SRC ! -name "*.$SRCEXT" -type f`
 do 
     from=$file
     to="$DEST${file##$SRC}"
