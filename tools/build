@@ -34,6 +34,8 @@ soft_mkdir() {
 
 status "Rendering site"
 
+mkdir -p $DEST
+
 for file in `find $SRC -name "*.md" -type f` 
 do 
    from="${file##$SRC}" # Strip `src` path from file string
