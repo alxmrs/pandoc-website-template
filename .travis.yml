@@ -11,6 +11,6 @@ deploy:
   keep_history: true
   skip_cleanup: true
   verbose: true
-  local_dir: docs 
+  local_dir: public
   on: 
     branch: master

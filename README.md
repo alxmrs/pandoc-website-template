@@ -2,8 +2,29 @@
 
 TL;DR: A static website built with Pandoc and hosted with GitHub Pages
 
-## Setup
-- TODO
+## Use
+
+`tools/build` walks a source directory, invokes a Pandoc command for each target file, and copies rendered output & 
+assets to a destination folder.
+ 
+This tool is configurable by environment variables.
+
+- `SRC` Root directory of input sources. Default: `src/`
+- `DST` Root directory for generated output. Default: `public/`
+- `SRC_EXT` Input sources file extension. Default: `md`
+- `DST_EXT` Output generation file extension. Default: `html`
+- `HEADER` path/to/header.html (`--include-before-body`). Default: `$SRC/header.html`
+- `FOOTER` path/to/footer.html (`--include-after-body`). Default: `$SRC/footer.html`
+- `CSS` path/to/style.css to be embedded in header of a web page. Default: `css/main.css`
+- `PANOPTS` Arguments to pass to Pandoc for each input file. Default:
+  - `--css $CSS --email-obfuscation=javascript --metadata-file=defaults.yml -f gfm -t html5 -B $HEADER -A $FOOTER`
+
+The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
+support a wide variety of tasks; for instance, generating a CV or a slide deck.
+
+We use Travis CI and Github Pages as a means to automatically update the website on source changes. Should this template
+ be used beyond websites, the build script can be tuned by modifying the `.travis.yml` and / or by setting CI 
+environment variables.
 
 ## Thanks to 
 - The [contributors of Pandoc](https://github.com/jgm/pandoc/graphs/contributors)
