@@ -1,3 +1,3 @@
 # Hello, World!
 
-This is html genertated from Markdown with Pandoc.
+This is html generated from Markdown with Pandoc.
