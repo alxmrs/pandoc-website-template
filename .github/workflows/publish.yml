@@ -1,6 +1,6 @@
 # This is a basic workflow modified for this template
 
-name: CI
+name: CD
 
 on:
   push:
