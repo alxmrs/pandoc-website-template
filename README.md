@@ -22,11 +22,9 @@ This tool is configurable by environment variables.
 The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
 support a wide variety of tasks; for instance, generating a CV or a slide deck.
 
-We use [Travis CI](https://travis-ci.com/) and [Github Pages](https://pages.github.com/) as a means to automatically update the website on source changes. Should this template
- be used beyond websites, the build script can be tuned by modifying the `.travis.yml` and / or by setting CI 
-environment variables.
-
-Make sure to set up a [Github Token for the Travis build](https://docs.travis-ci.com/user/deployment/pages/#setting-the-github-token).
+We use [Github Actions](http://github.com/actions) and [Github Pages](https://pages.github.com/) to automatically update the website on source changes. Should this template
+ be used beyond websites, the build script can be tuned by modifying the `.github/workflows/publish.yml` and / or by setting CI 
+environment variables (the latter is recommended).
 
 ## Thanks to 
 
