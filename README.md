@@ -1,5 +1,7 @@
 # Pandoc Website Template
 
+![CI](https://github.com/alxrsngrtn/pandoc-website-template/workflows/CI/badge.svg)
+
 TL;DR: A template to build static websites with [Pandoc](https://pandoc.org/), [Github Actions](http://github.com/actions) & [Github Pages](https://pages.github.com/). 
 
 ## Use
