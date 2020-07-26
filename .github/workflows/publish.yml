@@ -1,0 +1,22 @@
+# This is a basic workflow modified for this template
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Pandoc
+      run: bin/install
+
+    - name: Build Website
+      run: bin/build
