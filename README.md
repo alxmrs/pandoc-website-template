@@ -19,7 +19,7 @@ This tool is configurable by environment variables.
 | `DST_EXT` | Output generation file extension.                   | `html`                                                |
 | `HEADER`  | path/to/header.html (`--include-before-body`).      | `$SRC/header.html`                                    |
 | `FOOTER`  | path/to/footer.html (`--include-after-body`).       | `$SRC/footer.html`                                    |
-| `CSS`     | path/to/style.css embedded in header of a web page. | `css/main.css`                                        |
+| `CSS`     | path/to/style.css embedded in header of a web page. | `/main.css`                                           |
 | `PANOPTS` | Arguments to pass to Pandoc for each input file.    | `--css $CSS --email-obfuscation=javascript --metadata-file=defaults.yml -f markdown_github+yaml_metadata_block -t html5 -B $HEADER -A $FOOTER` |
 
 The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
