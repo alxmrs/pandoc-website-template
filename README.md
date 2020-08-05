@@ -2,31 +2,42 @@
 
 ![CI](https://github.com/alxrsngrtn/pandoc-website-template/workflows/CI/badge.svg)
 
-TL;DR: A template to build static websites with [Pandoc](https://pandoc.org/), [Github Actions](http://github.com/actions) & [Github Pages](https://pages.github.com/). 
+A template to build static websites with [Pandoc](https://pandoc.org/) & [Github Actions](http://github.com/actions). 
 
 ## Use
 
-`bin/build` walks a source directory, invokes a Pandoc command for each target file, and copies assets to a destination folder.
+### `build`
+
+`bin/build` walks the source directory, invokes Pandoc on each file, and copies assets to a destination folder.
  
 This tool is configurable by environment variables.
 
-| Variable  | Description                                         | Default                                               |
-|-----------|-----------------------------------------------------|-------------------------------------------------------|
-| `SRC`     | Root directory of input sources.                    | `src/`                                                |
-| `DST`     | Root directory for generated output.                | `public/`                                             |
-| `STATIC`  | Directory for static assets.                        | `$SRC/static`                                         |
-| `SRC_EXT` | Input sources file extension.                       | `md`                                                  |
-| `DST_EXT` | Output generation file extension.                   | `html`                                                |
-| `HEADER`  | path/to/header.html (`--include-before-body`).      | `$SRC/header.html`                                    |
-| `FOOTER`  | path/to/footer.html (`--include-after-body`).       | `$SRC/footer.html`                                    |
-| `CSS`     | path/to/style.css embedded in header of a web page. | `/main.css`                                           |
+| Variable  | Description                                         | Default            |
+|-----------|-----------------------------------------------------|--------------------|
+| `SRC`     | Root directory of input sources.                    | `src/`             |
+| `DST`     | Root directory for generated output.                | `public/`          |
+| `STATIC`  | Directory for static assets.                        | `$SRC/static`      |
+| `SRC_EXT` | Input sources file extension.                       | `md`               |
+| `DST_EXT` | Output generation file extension.                   | `html`             |
+| `HEADER`  | path/to/header.html (`--include-before-body`).      | `$SRC/header.html` |
+| `FOOTER`  | path/to/footer.html (`--include-after-body`).       | `$SRC/footer.html` |
+| `CSS`     | path/to/style.css embedded in header of a web page. | `/main.css`        |
 | `PANOPTS` | Arguments to pass to Pandoc for each input file.    | `--css $CSS --email-obfuscation=javascript --metadata-file=defaults.yml -f markdown_github+yaml_metadata_block -t html5 -B $HEADER -A $FOOTER` |
 
 The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
-support a wide variety of tasks; for instance, generating a CV or a slide deck.
+support a wide variety of tasks; for instance, generating a CV or a slide deck. See [these examples](https://pandoc.org/demos.html) 
+for more inspiration.
 
-We use Github Actions and Github Pages to automatically update the website on source changes. Should this template 
-be used beyond websites, the build script can be tuned setting CI environment variables.
+
+### `watch`
+
+`bin/watch` will watch the source directory. On any changes, it will invoke the build script.
+
+
+### Deployment
+
+This template will publish the static site to [Github Pages](https://pages.github.com) via [Github Actions](http://github.com/actions).
+
 
 ## Thanks to 
 
