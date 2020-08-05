@@ -1,18 +1,13 @@
 #!/bin/sh
+#
+# Invoke pandoc on $SRC, copy $STATIC assets over to $DST.
+#
 
 set -e
 
 ROOT=$(dirname $0)/..
-SRC=${SRC:-"$ROOT/src"}
-DST=${DST:-"$ROOT/public"}
-STATIC=${STATIC:-"$SRC/static"}
-HEADER=${HEADER:-"$SRC/header.html"}
-FOOTER=${FOOTER:-"$SRC/footer.html"}
-CSS=${CSS:-"/main.css"}
-SRC_EXT=${SRC_EXT:-"md"}
-DST_EXT=${DST_EXT:-"html"}
-PANOPTS=${PANOPTS:-"--css $CSS --email-obfuscation=javascript --metadata-file=defaults.yml -f markdown_github+yaml_metadata_block -t html5 -B $HEADER -A $FOOTER"}
 
+. $ROOT/bin/env
 . $ROOT/bin/logging
 
 mkdir -p $DST
