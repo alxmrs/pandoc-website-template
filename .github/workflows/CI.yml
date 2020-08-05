@@ -20,10 +20,3 @@ jobs:
 
     - name: Build Website
       run: bin/build
-      
-    - name: Lint
-      uses: samuelmeuli/lint-action@v1
-      with:
-        github_token: ${{ secrets.github_token }}
-        # Enable more linters depening on chosen lanugage: https://github.com/marketplace/actions/lint-action.
-        stylelint: true
