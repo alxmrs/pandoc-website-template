@@ -5,29 +5,30 @@
 
 set -e
 
-ROOT=$(dirname $0)/..
+ROOT=$(dirname "$0")/..
+# shellcheck source=bin/env
+. "$ROOT"/bin/env
+# shellcheck source=bin/logging
+. "$ROOT"/bin/logging
 
-. $ROOT/bin/env
-. $ROOT/bin/logging
-
-mkdir -p $DST
+mkdir -p "$DST"
 
 status "Rendering"
-for file in $(find $SRC -name "*.$SRC_EXT" -type f); do
+for file in "$SRC"/*."${SRC_EXT}"; do
   # Strip `src` path from file string
   FROM="${file##$SRC}"
   # Define a target file with the new extension
   TO="${FROM%%$SRC_EXT}$DST_EXT"
   echo "$FROM --> $TO"
-  mkdir -p $(dirname "$DST$TO")
-  pandoc $PANOPTS --output=$DST$TO $file || warn "Failed to create $TO"
+  mkdir -p "$(dirname "$DST$TO")"
+  pandoc "$PANOPTS" --output="$DST$TO" "$file" || warn "Failed to create $TO"
 done
 
 status "Copying over assets"
-for file in $(find $STATIC ! -name "*.$SRC_EXT" -type f); do
+for file in "$STATIC"/*."${DST_EXT}"; do
   FROM=$file
   TO="$DST${file##$STATIC}"
   echo "${FROM##$ROOT} --> ${TO##$ROOT}"
-  mkdir -p $(dirname $TO)
-  cp $FROM $TO || warn "Failed to copy asset $TO"
+  mkdir -p "$(dirname "$TO")"
+  cp "$FROM" "$TO" || warn "Failed to copy asset $TO"
 done
