@@ -1,6 +1,7 @@
 # Pandoc Website Template
 
-![CI](https://github.com/alxrsngrtn/pandoc-website-template/workflows/CI/badge.svg)
+![pages-deploy](https://github.com/alxrsngrtn/pandoc-website-template/workflows/pages-deploy/badge.svg)
+![shellcheck](https://github.com/alxrsngrtn/pandoc-website-template/workflows/shellcheck/badge.svg)
 
 A template to build static websites with [Pandoc](https://pandoc.org/) & [Github Actions](http://github.com/actions). 
 
@@ -44,4 +45,3 @@ This template will publish the static site to [Github Pages](https://pages.githu
 - The [contributors of Pandoc](https://github.com/jgm/pandoc/graphs/contributors)
 - Will Styler's [inspiration](http://wstyler.ucsd.edu/posts/lmimg/spcv.txt)
 - [Pure sh Bible](https://github.com/dylanaraps/pure-sh-bible)
-- [12 Factor](https://12factor.net)
