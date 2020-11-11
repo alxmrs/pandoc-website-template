@@ -4,6 +4,7 @@
 #
 
 set -e
+shopt -s nullglob
 
 ROOT=$(dirname "$0")/..
 # shellcheck source=bin/env
