@@ -50,3 +50,4 @@ This template will publish the static site to [Github Pages](https://pages.githu
 - The [contributors of Pandoc](https://github.com/jgm/pandoc/graphs/contributors)
 - Will Styler's [inspiration](http://wstyler.ucsd.edu/posts/lmimg/spcv.txt)
 - [Pure sh Bible](https://github.com/dylanaraps/pure-sh-bible)
+- [Drew McConville](http://bettermotherfuckingwebsite.com/)
