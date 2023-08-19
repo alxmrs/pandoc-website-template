@@ -5,6 +5,8 @@
 
 A template to build static websites with [Pandoc](https://pandoc.org/). 
 
+Demo site: [pandoc.merose.com](https://pandoc.merose.com/).
+
 ## Use
 
 ### `build`
@@ -30,7 +32,7 @@ To make it easier to edit metadata for every page, consider making changes to th
 
 > Note: Configuring RSS still needs to happen in the `bin/build` file today.
 
-The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
+The defaults of this script are oriented for creating static websites. However, the configuration could be molded to 
 support a wide variety of tasks; for instance, generating a CV or a slide deck. See [these examples](https://pandoc.org/demos.html) 
 for more inspiration.
 
