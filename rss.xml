@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+<title>My Pandoc Blog</title>
+<link>https://github.com/alxmrs/pandoc-website-template</link>
+<description>A blog built with Pandaoc</description>
+<language>en-US</language>
+<webMaster>you@example.com (Kilgore Trout)</webMaster>
+<copyright>MIT or CC BY-SA 4.0</copyright>
+<docs>https://www.rssboard.org/rss-specification</docs>
+<generator>pandoc-rss</generator>
+<item>
+<title>Can’t Stop Blogging</title>
+<pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+<guid>https://github.com/alxmrs/pandoc-website-template/cant-stop-blogging/</guid>
+<description><![CDATA[<p>What a pleasure it is to use this static site
+generator? I can’t stop blogging.</p>]]></description>
+</item>
+<item>
+<title>New Pandoc Blog!</title>
+<pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+<guid>https://github.com/alxmrs/pandoc-website-template/new-blog/</guid>
+<description><![CDATA[<p>I just updated my blog! Now, it’s make with
+Pandoc — and even has RSS!</p>]]></description>
+</item>
+</channel>
+</rss>
