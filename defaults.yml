@@ -1,1 +1,3 @@
-pagetitle: 'Pandoc Website Template'
+lang: en-US
+from: gfm+raw_html
+to: html
