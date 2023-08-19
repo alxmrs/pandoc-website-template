@@ -75,6 +75,6 @@ pandoc-rss -s \
     -l "https://github.com/alxmrs/pandoc-website-template" \
     -f "%s/" \
     -c "MIT or CC BY-SA 4.0" \
-    -w "you@example.com (Jane Doe)" \
+    -w "you@example.com (Kilgore Trout)" \
     -n "en-US" \
     $ORDERED_POSTS > "$DST/rss.xml"

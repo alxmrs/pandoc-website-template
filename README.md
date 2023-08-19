@@ -3,13 +3,14 @@
 ![pages-deploy](https://github.com/alxmrs/pandoc-website-template/workflows/pages-deploy/badge.svg)
 ![shellcheck](https://github.com/alxmrs/pandoc-website-template/workflows/shellcheck/badge.svg)
 
-A template to build static websites with [Pandoc](https://pandoc.org/) & [Github Actions](http://github.com/actions). 
+A template to build static websites with [Pandoc](https://pandoc.org/). 
 
 ## Use
 
 ### `build`
 
-`bin/build` walks the source directory, invokes Pandoc on each file, and copies assets to a destination folder.
+`bin/build` walks the source directory, invokes Pandoc on each file, and copies assets to a destination folder. It also
+gathers all files not named "index.md" into an RSS feed.
  
 This tool is configurable by environment variables.
 
@@ -24,6 +25,10 @@ This tool is configurable by environment variables.
 | `FOOTER`  | path/to/footer.html (`--include-after-body`).       | `$SRC/footer.html` |
 | `CSS`     | path/to/style.css embedded in header of a web page. | `/main.css`        |
 | `PANOPTS` | Arguments to pass to Pandoc for each input file.    | `--css $CSS --metadata-file=$ROOT/defaults.yml -B $HEADER -A $FOOTER` |
+
+To make it easier to edit metadata for every page, consider making changes to the `defaults.yml` at the project root.
+
+> Note: Configuring RSS still needs to happen in the `bin/build` file today.
 
 The defaults of this script are oriented for creating static websites. However, the configuration is general enough to 
 support a wide variety of tasks; for instance, generating a CV or a slide deck. See [these examples](https://pandoc.org/demos.html) 
