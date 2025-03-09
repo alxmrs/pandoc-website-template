@@ -3,12 +3,23 @@
 <channel>
 <title>My Pandoc Blog</title>
 <link>https://github.com/alxmrs/pandoc-website-template</link>
-<description>A blog built with Pandaoc</description>
+<description>A blog built with Pandoc</description>
 <language>en-US</language>
 <webMaster>you@example.com (Kilgore Trout)</webMaster>
 <copyright>MIT or CC BY-SA 4.0</copyright>
 <docs>https://www.rssboard.org/rss-specification</docs>
 <generator>pandoc-rss</generator>
+<item>
+<title>Contemporary Art in Bangkok!</title>
+<pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+<guid>https://github.com/alxmrs/pandoc-website-template/cool-museum/</guid>
+<description><![CDATA[<p>I love this painting I saw on my trip to
+Thailand!</p>
+<figure>
+<img src="/assets/birth-aging-dying.webp" alt="Birth, Aging, Dying" />
+<figcaption aria-hidden="true">Birth, Aging, Dying</figcaption>
+</figure>]]></description>
+</item>
 <item>
 <title>Can’t Stop Blogging</title>
 <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
