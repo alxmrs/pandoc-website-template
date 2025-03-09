@@ -6,10 +6,9 @@ ROOT=$(dirname "$(dirname "$(realpath "$0")")")
 SRC=${SRC:-"$ROOT/src"}
 DST=${DST:-"$ROOT/public"}
 ASSETS=${ASSETS:="$ROOT/assets"}
-STATIC=${STATIC:-"$ROOT/static"}
 HEADER=${HEADER:-"$ROOT/template/header.html"}
 FOOTER=${FOOTER:-"$ROOT/template/footer.html"}
-CSS=${CSS:-"/css/main.css"}
+CSS=${CSS:-"/assets/css/main.css"}
 SRC_EXT=${SRC_EXT:-"md"}
 DST_EXT=${DST_EXT:-"html"}
 PANOPTS=${PANOPTS:-"--css $CSS --metadata-file=$ROOT/defaults.yml -B $HEADER -A $FOOTER" -V lang=en-US}
