@@ -1,7 +1,7 @@
 # Pandoc Website Template
 
-![pages-deploy](https://github.com/alxmrs/pandoc-website-template/workflows/pages-deploy/badge.svg)
-![shellcheck](https://github.com/alxmrs/pandoc-website-template/workflows/shellcheck/badge.svg)
+[![pages-deploy](https://github.com/alxmrs/pandoc-website-template/actions/workflows/pages.yml/badge.svg)](https://github.com/alxmrs/pandoc-website-template/actions/workflows/pages.yml)
+[![shellcheck](https://github.com/alxmrs/pandoc-website-template/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/alxmrs/pandoc-website-template/actions/workflows/shellcheck.yml)
 
 A template to build static websites with [Pandoc](https://pandoc.org/). 
 
