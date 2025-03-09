@@ -20,13 +20,12 @@ This tool is configurable by environment variables.
 |-----------|-----------------------------------------------------|--------------------------------------------------------------------------------------|
 | `SRC`     | Root directory of input sources.                    | `src/`                                                                               |
 | `DST`     | Root directory for generated output.                | `public/`                                                                            |
-| `ASSETS`  | Directory to store media, like images               | `assets/`                                                                            |
-| `STATIC`  | Directory for static site assets, like CSS files.   | `$SRC/static/`                                                                       |
+| `ASSETS`  | Directory for static assets, like CSS and images    | `assets/`                                                                            |
 | `SRC_EXT` | Input sources file extension.                       | `md`                                                                                 |
 | `DST_EXT` | Output generation file extension.                   | `html`                                                                               |
 | `HEADER`  | path/to/header.html (`--include-before-body`).      | `template/header.html`                                                               |
 | `FOOTER`  | path/to/footer.html (`--include-after-body`).       | `template/footer.html`                                                               |
-| `CSS`     | path/to/style.css embedded in header of a web page. | `css/main.css`                                                                       |
+| `CSS`     | path/to/style.css embedded in header of a web page. | `/assets/css/main.css`                                                               |
 | `PANOPTS` | Arguments to pass to Pandoc for each input file.    | `--css $CSS --metadata-file=$ROOT/defaults.yml -B $HEADER -A $FOOTER" -V lang=en-US` |
 
 To make it easier to edit metadata for every page, consider making changes to the `defaults.yml` at the project root.
@@ -42,7 +41,7 @@ for more inspiration.
 
 `bin/watch` will watch the source directory. On any changes, it will invoke the build script.
 
-> Note: if you change files outside of `$SRC` (i.e. in `template/` or `static/`), you'll need to terminate and 
+> Note: if you change files outside of `$SRC` (i.e. in `template/` or `assets/`), you'll need to terminate and 
 > re-run this script.
 
 ### Deployment

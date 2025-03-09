@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# Invoke pandoc on $SRC, copy $STATIC assets over to $DST.
+# Invoke pandoc on $SRC, copy $ASSETS assets over to $DST.
 # Also, generates an RSS feed from non-index.md files.
 #
 
@@ -42,9 +42,6 @@ find "$SRC" -type f -name "*.$SRC_EXT" | while IFS= read -r file; do
   convert "$file" &
 done
 wait
-
-status "Copying over static"
-cp -r "$STATIC/"* "$DST"
 
 status "Copying over assets"
 cp -r "$ASSETS" "$DST"
