@@ -1,3 +1,2 @@
-lang: en-US
-from: gfm+raw_html
-to: html
+header-includes:
+  - <meta property="og:image" content="/assets/kraftwerk.webp">

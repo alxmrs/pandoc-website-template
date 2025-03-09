@@ -1,12 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env sh
 set -e
 #
 # Install pandoc on debian.
 #
-
-curl -O -L -C - https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
-sudo dpkg -i pandoc-2.19.2-1-amd64.deb
-rm pandoc-2.19.2-1-amd64.deb
+VERSION="3.6.3"
+curl -O pandoc.deb -L -C - "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-$VERSION-1-amd64.deb"
+sudo dpkg -i pandoc.deb
+rm pandoc.deb
 
 #
 # Install pandoc-rss on debian.
