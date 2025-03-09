@@ -37,26 +37,17 @@ convert() {
   pandoc $PANOPTS "$file" --output="$DST$TO" || warn "Failed to create $TO"
 }
 
-copy() {
-  file="$1"
-  FROM=$file
-  TO="$DST${file##"$STATIC"}"
-  echo "${FROM##"$ROOT"} --> ${TO##"$ROOT"}"
-  mkdir -p "$(dirname "$TO")"
-  cp "$FROM" "$TO" || warn "Failed to copy asset $TO"
-}
-
 status "Rendering"
 find "$SRC" -type f -name "*.$SRC_EXT" | while IFS= read -r file; do
   convert "$file" &
 done
 wait
 
+status "Copying over static"
+cp -r "$STATIC/"* "$DST"
+
 status "Copying over assets"
-find "$STATIC" -type f | while IFS= read -r file; do
-  copy "$file" &
-done
-wait
+cp -r "$ASSETS" "$DST"
 
 status "Rendering RSS feed"
 # This does the following:
@@ -72,7 +63,7 @@ echo "$ORDERED_POSTS"
 # shellcheck disable=SC2086
 pandoc-rss -s \
     -t "My Pandoc Blog" \
-    -d "A blog built with Pandaoc" \
+    -d "A blog built with Pandoc" \
     -l "https://github.com/alxmrs/pandoc-website-template" \
     -f "%s/" \
     -c "MIT or CC BY-SA 4.0" \

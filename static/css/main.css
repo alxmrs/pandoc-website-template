@@ -23,3 +23,7 @@ nav ul li {
     margin-right: 20px;
     line-height: 2.5em;
 }
+
+img {
+    max-width: 95%;
+}
