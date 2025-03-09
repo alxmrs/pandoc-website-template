@@ -4,7 +4,7 @@ set -e
 # Install pandoc on debian.
 #
 VERSION="3.6.3"
-curl -O pandoc.deb -L -C - "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-$VERSION-1-amd64.deb"
+curl -o pandoc.deb -L -C - "https://github.com/jgm/pandoc/releases/download/$VERSION/pandoc-$VERSION-1-amd64.deb"
 sudo dpkg -i pandoc.deb
 rm pandoc.deb
 
