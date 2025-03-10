@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  repo: alxmrs/pandoc-website-template
+  branch: main
+  base_url: https://auth.merose.com
+media_folder: "assets/"
+collections:
+  - name: "page"
+    label: "Page"
+    folder: "src/"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description-meta", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

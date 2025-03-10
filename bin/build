@@ -45,6 +45,8 @@ wait
 
 status "Copying over assets"
 cp -r "$ASSETS" "$DST"
+# Copies all non-source files to the destination, mirroring file structure.
+(cd "$SRC" && find . -type f -not -name "*.$SRC_EXT" -print | cpio -pdm "$DST")
 
 status "Rendering RSS feed"
 # This does the following:
