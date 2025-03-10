@@ -1,3 +1,4 @@
+site_url: https://pandoc.merose.com
 backend:
   name: git-gateway
   repo: alxmrs/pandoc-website-template
