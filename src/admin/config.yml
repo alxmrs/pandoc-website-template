@@ -1,6 +1,6 @@
 site_url: https://pandoc.merose.com
 backend:
-  name: git-gateway
+  name: github
   repo: alxmrs/pandoc-website-template
   branch: main
   base_url: https://auth.merose.com
