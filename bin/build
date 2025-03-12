@@ -63,7 +63,7 @@ echo "$ORDERED_POSTS"
 pandoc-rss -s \
     -t "My Pandoc Blog" \
     -d "A blog built with Pandoc" \
-    -l "https://github.com/alxmrs/pandoc-website-template" \
+    -l "https://pandoc.merose.com" \
     -f "%s/" \
     -c "MIT or CC BY-SA 4.0" \
     -w "you@example.com (Kilgore Trout)" \
